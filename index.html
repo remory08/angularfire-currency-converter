@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="currencyConverter">
+<head>
+  <meta charset="UTF-8">
+  <title>Currency Converter</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js" type="text/javascript"></script>
+  <script src="https://cdn.firebase.com/js/client/2.2.9/firebase.js"></script>
+  <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
+</head>
+<body ng-controller="currencyController">
+<h1>Currency Converter</h1>
+  <div>
+    <input type="text" ng-model="quantity" ng-init='quantity=1'>
+    <select ng-model="currency" ng-init="currency='bitcoin'">
+      <option value="bitcoin">BTC</option>
+      <option value="dogecoin">XDG</option>
+      <option value="litecoin">LTC</option>
+    </select>
+    {{currency}}
+     = {{quantity * conversion(currency) | currency}} USD
+  </div>
+
+
+
+
+
+  <script type="text/javascript" src="./app.js"></script>
+  <script type="text/javascript" src="./controllers.js"></script>
+</body>
+</html>
